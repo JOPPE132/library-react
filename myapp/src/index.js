@@ -1,17 +1,46 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from 'react'; //defines JSX
+import ReactDOM from 'react-dom'
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import navbar from "./components/navbar";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function HeaderContent(){
+    return(
+        <header>
+            <nav>
+                <li>Bøker</li>
+                <li>Forfattere</li>
+                <li>Om oss</li>
+            </nav>
+        </header>
+    )
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+function MainContent(){
+    return(
+        <div>
+            <h1>Hello, this is the main content</h1>
+            <p>Testint content</p>
+        </div>
+    )
+}
+
+function FooterContent(){
+    return(
+        <footer>
+            <h1>Trademark reaact-library</h1>
+        </footer>
+    )
+}
+
+function Page(){
+    return (
+        <div>
+            <HeaderContent/>
+            <MainContent/>
+            <FooterContent/>
+        </div>
+    )
+}
+
+ReactDOM.render(<Page/>, document.getElementById("root"));
